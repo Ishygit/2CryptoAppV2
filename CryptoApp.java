@@ -27,7 +27,9 @@ public class CryptoApp {
             encoder = new RotEncoder(shift);
          } else if (encoderType.equals("SbsEncoder")) {
             encoder = new SbsEncoder(key);
-         } else {
+         } else if (encoderType.equals("VigenereEncoder")) {
+            encoder = new VigenereEncoder(key);
+         }else {
             throw new CAppException("Invalid encoder type: " + encoderType);
          }
 
